@@ -28,6 +28,10 @@ class CityResource extends Resource
                 ->required()
                 ->maxLength(255),
 
+                Forms\Components\TextInput::make('slug')
+                ->required()
+                ->maxLength(255),
+
                 Forms\Components\FileUpload::make('photo')
                 ->image()
                 ->required(),

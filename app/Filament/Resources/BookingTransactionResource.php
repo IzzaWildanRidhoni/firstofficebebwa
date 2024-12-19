@@ -16,8 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class BookingTransactionResource extends Resource
 {
     protected static ?string $model = BookingTransaction::class;
-
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-s-shopping-cart';
 
     public static function form(Form $form): Form
     {

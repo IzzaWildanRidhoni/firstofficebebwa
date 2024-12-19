@@ -11,7 +11,7 @@ class BookingTransaction extends Model
 {
     use HasFactory,SoftDeletes;
 
-    protected $filable = [
+    protected $fillable = [
         'name',
         'phone_number',
         'booking_trx_id',

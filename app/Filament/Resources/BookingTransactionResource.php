@@ -59,7 +59,7 @@ class BookingTransactionResource extends Resource
                 ->required(),
 
                 Forms\Components\Select::make('office_space_id')
-                ->relationship('officespace','name')
+                ->relationship('officeSpace','name')
                 ->searchable()
                 ->preload()
                 ->required(),
@@ -70,7 +70,20 @@ class BookingTransactionResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('booking_trx_id')
+                ->searchable(),
+                Tables\Columns\TextColumn::make('name')
+                ->searchable(),
+                Tables\Columns\TextColumn::make('office_space.name'),
+                Tables\Columns\TextColumn::make('started_at')
+                ->date(),
+                Tables\Columns\IconColumn::make('is_paid')
+                ->boolean()
+                ->trueColor('danger')
+                ->falseColor('success')
+                ->trueIcon('heroicon-s-x-circle')
+                ->falseIcon('heroicon-s-check-circle')
+                ->label('Sudah Bayar?'),
             ])
             ->filters([
                 //

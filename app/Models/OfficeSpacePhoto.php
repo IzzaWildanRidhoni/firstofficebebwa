@@ -12,8 +12,8 @@ class OfficeSpacePhoto extends Model
     use HasFactory,SoftDeletes;
 
     protected $fillable = [
-        'office_space_id',
         'photo',
+        'office_space_id',
     ];
 
     public function officeSpace(): BelongsTo
